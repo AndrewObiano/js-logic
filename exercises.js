@@ -17,7 +17,7 @@ If/else statements = Evaluates (or checks) a condition. If the condition is true
   return "Get back to coding!";
 };*/
 
-console.log('test');
+//console.log('test'); //WORK UP TO #14 FOR THIS WEEKEND UNLESS LIKE DO LOOPS
 
 /*
  * #1
@@ -30,6 +30,14 @@ console.log('test');
  * The function will return true if the number passed into the function is equal to or greater than Hawaii's voting age. Console.log your result.
 */
 
+function canVote(age){
+  if(age >= 16){
+    return true;
+  }else{
+    return 'too young!';
+  }
+}
+console.log(canVote(19));
 
 /*
  * #2
@@ -43,6 +51,12 @@ console.log('test');
  * Console.log your result.
 */
 
+function login(password){
+  if(password === 'test1234'){
+    return 'Login Success!';
+  }
+}
+console.log(login('test1234'));
 
 /*
  * #3
@@ -57,7 +71,14 @@ console.log('test');
  * Console.log your result.
 */
 
-
+function isGreaterThan(first,second){
+  if(first > second){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(isGreaterThan(3,2));
 
 /*
  * #4
@@ -71,7 +92,12 @@ console.log('test');
  * Console.log your result.
 */
 
-
+function mustBeTrue(boo){
+  if(boo === true){
+    return true;
+  }
+}
+console.log(mustBeTrue(true));
 
 /*
  * #5
@@ -85,7 +111,12 @@ console.log('test');
  * Console.log your result.
 */
 
-
+function bigBird(word){
+  if(word.length === 3){
+    return 'Word to Big Bird!';
+  }
+}
+console.log(bigBird('big'));
 
 /*
  * #6
@@ -100,6 +131,14 @@ console.log('test');
  * Console.log your result.
 */
 
+function isEqual(first,second){
+  if(first === second){
+    return 'You look mahvelous!';
+  }else{
+    return "I don't know who you are anymore.";
+  }
+}
+console.log(isEqual('what','what'));
 
 /*
  * #7
@@ -114,6 +153,14 @@ console.log('test');
  * Console.log your result.
 */
 
+function notEqual(first,second){
+  if(first ==! second){
+    return 'Opposites do attract';
+  }else{
+    return "Cause it's like you're my mirror.";
+  }
+}
+console.log(notEqual('what','wat'));
 
 /*
  * #8
@@ -127,7 +174,14 @@ console.log('test');
  * Console.log your result.
 */ 
 
-
+function spareChange(money){
+  if(money > 100){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(spareChange(101));
 
 /*
  * #9
@@ -143,7 +197,14 @@ console.log('test');
  * Console.log your result.
 */ 
 
-
+function dirty30(one, two, three){
+  if(one + two + three > 30){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(dirty30(10,20,30));
 
 /*
  * #10
@@ -157,8 +218,14 @@ console.log('test');
  * Console.log your result.
 */ 
 
-
-
+function evenStevens(num){
+  if(num%2 === 0){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(evenStevens(4));
 
 /*
  * #11
@@ -173,6 +240,14 @@ console.log('test');
  * Console.log your result.
 */ 
 
+function daClub(cover,age){
+  if(cover>=21 && age>=21){
+    return 'Welcome to the Legends Lounge.';
+  }else{
+    return 'Chuck E Cheese is across the street.';
+  }
+}
+console.log(daClub(22,22));
 
 /*
  * #12
@@ -187,7 +262,14 @@ console.log('test');
  * Console.log your result.
 */ 
 
-
+function graduation(credits,grades){
+  if(credits>=120 || grades>=2.0){
+    return 'Congratulations on a job well done.';
+  }else{
+    return 'See you in summer school';
+  }
+}
+console.log(graduation(121, 2.1));
 
 /*
  * #13
@@ -201,6 +283,16 @@ console.log('test');
  * Console.log your result.
 */ 
 
+function moneyTrain(speed){
+  if(speed<50){
+    return "You are riding Honolulu's Rail";
+  }else if(speed<100){
+    return "You are riding an Amtrak.";
+  }else{
+    return "Now you ballin' in the Shinkansen!";
+  }
+}
+console.log(moneyTrain(1000));
 
 /*
  * #14
@@ -215,6 +307,21 @@ console.log('test');
  * Invoke your function again.
  * Console.log budget and doughnutBought again.
 */ 
+
+var budget = 25;
+var doughnutPrice = 5;
+var doughnutBought = 0;
+
+function buyDoughnut(){
+  if(budget >= doughnutPrice){
+    doughnutBought++;
+    budget -= doughnutPrice;
+  }
+}
+buyDoughnut();
+console.log(doughnutBought, budget);
+buyDoughnut();
+console.log(doughnutBought, budget);
 
 /*Final Boss*/
 /*Create a function name dailySpecials which takes in a parameter: `special`.
