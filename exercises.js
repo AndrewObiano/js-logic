@@ -309,25 +309,47 @@ console.log(moneyTrain(1000));
 */ 
 
 var budget = 25;
-var doughnutPrice = 5;
-var doughnutBought = 0;
+var donutPrice = 5;
+var donutBought = 0;
 
-function buyDoughnut(){
-  if(budget >= doughnutPrice){
-    doughnutBought++;
-    budget -= doughnutPrice;
+function buyDonut(){
+  if(budget >= donutPrice){
+    donutBought++;
+    budget -= donutPrice;
   }
 }
-buyDoughnut();
-console.log(doughnutBought, budget);
-buyDoughnut();
-console.log(doughnutBought, budget);
+buyDonut();
+console.log(donutBought, budget);
+buyDonut();
+console.log(donutBought, budget);
 
 /*Final Boss*/
 /*Create a function name dailySpecials which takes in a parameter: `special`.
 Inside the function, create a switch statement that will check the daily specials of your favorite restaurant (or make up your own daily specials for each day of the week.*/
 
-
+function dailySpecials(day){
+  switch (day){
+    case 'Monday':
+      special = 'burgers';
+      break;
+    case 'Tuesday':
+      special = 'tacos';
+      break;
+    case 'Wednesday':
+      special = 'chicken katsu curry';
+      break;
+    case 'Thursday':
+      special = 'pizza';
+      break;
+    case 'Friday':
+      special = 'poke bowl';
+      break;
+    default:
+      special = 'spam musubi';
+  }
+  return special;
+}
+console.log(dailySpecials());
 
 /*
 For loops - A for loop checks a condition a specific number of times and allows us to execute a code block and evaluate a condition to determine if our loop should run again.
@@ -356,6 +378,9 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 5"
 */
 
+for (var i = 1; i<6; i++){
+  console.log('Player ' + i);
+}
 
 /* 
  * #16
@@ -363,6 +388,9 @@ for (var i = 0; i<toyotaModels.length; i++){
 */
   var myFavFoods = ["lemon bar", "carrot cake", "nachos", "bacon cheeseburger", "ramen", "sweet potato fries", "chimichanga"];
 
+  for(var i=0; i<7; i++){
+    console.log(myFavFoods[i]);
+  }
 
 /*
  * #17
@@ -379,7 +407,15 @@ for (var i = 0; i<toyotaModels.length; i++){
  * Console.log your result.
 */
 
-
+var numArray = [1, 2, 3, 4, 5];
+var total = 0; // do NOT put this in a FORLOOP or else it will re-declare the variable at 0
+function sumItUp(arr){
+  for(var i = 0; i<arr.length; i++){
+    total += arr[i];
+  }
+  return total;
+}
+console.log(sumItUp(numArray));
 
 /*
  * #18
@@ -393,7 +429,25 @@ for (var i = 0; i<toyotaModels.length; i++){
  * Console.log both the east and west arrays.
 */ 
 
-var players = ["Yao Ming", "BrookLin", " Jesus Shuttlesworth", "Manute Bol", "Sidney Deane", "World B Free"];
+var players = ["Yao Ming", "BrookLin", "Jesus Shuttlesworth", "Manute Bol", "Sidney Deane", "World B Free"];
+
+var east = [];
+var west = [];
+
+function allStars(ballers){
+  for(var i=0; i<=ballers.length; i++){
+    if(i%2 === 0){
+      east.push(players[i]);
+    }else if(i%2 === 1){
+      west.push(players[i]);
+    }
+  } return ballers;
+}
+
+allStars(players);
+console.log('East: ' + east);
+console.log('West: ' + west);
+
 /*
  * #19
  * Function - subways
@@ -406,8 +460,18 @@ var players = ["Yao Ming", "BrookLin", " Jesus Shuttlesworth", "Manute Bol", "Si
  * Console.log your results.
 */ 
 
-  var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
+  var subOfTheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
 
+  function subways(special){
+    for(var i=0; i<=subOfTheDay.length; i++){
+      if(i%2 === 1){
+        special[i] = 'Classic Tuna';
+      }
+    }
+  }
+
+subways(subOfTheDay);
+console.log(subOfTheDay);
 
 /*
 Final Boss
@@ -422,16 +486,14 @@ Final Boss
 */
 
 var phrase = "An apple a day keeps Alice feeling awesome!";
- 
-  
-  
+var test = ""; 
 
-
-
-
-
-
-
-
-
-
+function removeLetter(str){
+  for(var i=1; i<str.length; i++){
+    if(str[i] !== 'a' && str[i] !== 'A'){
+      test += str[i];
+    }
+  }
+  return test.split(' ');;
+}
+console.log(removeLetter(phrase));
